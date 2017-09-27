@@ -205,14 +205,16 @@ window.onload = function(){
 			$('.diagram').each(function(index){
 				//* if missing this.id.png, hide #diagramINDEX aka don't run this
 				
-				var image = new Image();
-				image.src = this.id + '.png';
-				if (image.width != 0) {
-					$(this).css({'background-image':'url(' + this.id + '.png)','background-size':'100%','background-color':'white','background-repeat':'no-repeat','background-position':'center','cursor':'help'});
-					$(this).append('<span class="help">(?)</span>')
-					$(this).click(openDiagram);
-				}
+				var diagramID = this.id;
 				
+				$.get(diagramID + '.png')
+					.done(function() {
+						$("#" + diagramID).css({'background-image':'url(' + diagramID + '.png)','background-size':'100%','background-color':'white','background-repeat':'no-repeat','background-position':'center','cursor':'help'});
+						$("#" + diagramID).append('<span class="help">(?)</span>');
+						$("#" + diagramID).click(openDiagram);
+					}).fail(function() { 
+						$("#" + diagramID).remove();
+					})
 				
 			});
 			for(var i=0; i<map.length; i++){
