@@ -209,7 +209,7 @@ window.onload = function(){
 				
 				$.get(diagramID + '.png')
 					.done(function() {
-						$("#" + diagramID).css({'background-image':'url(' + diagramID + '.png)','background-size':'100%','background-color':'white','background-repeat':'no-repeat','background-position':'center','cursor':'help'});
+						$("#" + diagramID).css({'background-image':'url(' + diagramID + '.png)'});
 						$("#" + diagramID).append('<span class="help">(?)</span>');
 						$("#" + diagramID).click(openDiagram);
 					}).fail(function() { 
