@@ -10,4 +10,4 @@ The [wiki](https://github.com/lucymchang/webpic/wiki) associated with this repos
 
 Example of use can currently be found at:
 
-https://www.ocf.berkeley.edu/~luchang/webpic
+https://www.ocf.berkeley.edu/~luchang/webpic/example

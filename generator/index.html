@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-    <title>Web Applet Generator (Chang 2016)</title>
+    <title>webpic Generator</title>
     <style type="text/css">
 
 .cf:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
@@ -159,26 +159,12 @@ p { line-height: 1.5em; }
 <body>
 
     <h1>Web Applet Generator</h1>
-    <p>This site will walk you through the steps for creating a custom webpage to process images for distance, point position, and count data.</p>
+    <p>This site allows you to customize the steps for a webpic project that processes images for distance, point position, and count data.  To return to setup instructions, click <a href="https://github.com/lucymchang/webpic/wiki/Setup">here</a>.</p>
     <p>A working example can be found here: <a href="../" target="_blank">Example</a>.
     <div class="howTo">
-    <div class="step">
-        <p><strong>Create a Google Form</strong></p>
-        <p>Create a new form in <a href="https://www.google.com/forms/" target="_blank">Google Forms</a>.  Every entry represents one column in your resulting data table and needs to be in <strong>short answer</strong> format.</p>
-        <p>Types of data that can currently be collected:</p>
-        <ul>
-            <li><strong>Line:</strong> collects the distance of the line drawn</li>
-            <li><strong>Point:</strong> you will be able to choose whether this collects the position of the point on the image (x,y) or a distance relative to a reference point (either the endpoint of a line or another point)</li>
-            <li><strong>Count:</strong> collects the number of points placed</li>
-        </ul>
-        <p>IMPORTANT:<br />In addition to your data of interest, two entries <em>must</em> be dedicated for <strong>image</strong> (to collect the identifier/filename of the image being processed) and <strong>resize</strong> (to record how much the image has been resized to fit in the applet viewing area). You will be asked in step 3 below to designate which entries will be used for these fields.</p>
-        <p>If you require a scale, be sure to include an entry that will collect a measurement (line distance) for your scale.</p>
-        <p>Your data will be recorded as "results" of the form in the associated Google Sheets for this form.</p>
-        <p><strong>View the form that generated the example page:</strong> <a href="https://docs.google.com/a/berkeley.edu/forms/d/1gIQgFDxJWClwS8n9Yjv_fG5S5OrcoNkDJU0fkeDgEv8/viewform" target="_blank">Google Form</a>.<br /><strong>View the real-time results of the example page:</strong> <a href="https://docs.google.com/spreadsheets/d/1ag88baUw2dVWqyNwnoD0wjA1gOGlFA1Dbeg4Av3mjCE/edit?usp=sharing" target="_blank">Google Sheet</a>.</p>
-    </div>
   	<div class="step">
         <p><strong>Submit your Form to the generator</strong></p>
-        <p>View your completed form.  Right-click on the page and select "View Page Source".  Copy all the text, paste in the field below, and click "Submit Source".</p>
+        <p>After copying the page source (see instructions <a href="https://github.com/lucymchang/webpic/wiki/Setup#step-2-customize-steps-using-the-webpic-generator">here</a>), paste in the field below and click "Submit Source".</p>
         <textarea rows="4" cols="30" id="formSource" placeholder="Paste Google Forms Source"></textarea><br />
         <button onClick="loadItems()">Submit Source</button>
     </div>
@@ -206,24 +192,9 @@ p { line-height: 1.5em; }
     </div>
     <div class="step">
         <p><strong>Serialised Output</strong></p>
-        <p>Copy the text below and use a text editor to save it into a file called <strong>map.json</strong>.
+        <p>Copy the text below and use a text editor (like TextEdit or Notepad) to save as a file called <strong>map.json</strong>.
     
         <textarea id="items-output"></textarea>
-    </div>
-    <div class="step">
-    	<p><strong>Download Files</strong></p>
-        <p>Download the following .zip file containing everything needed for the web applet.</p>
-        <p><a href="webapplet0.9-20161017.zip" target="_blank">webapplet0.9-20161017.zip</a> (version 0.9, 1 MB, 10/17/2016)</p>
-    </div>
-    <div class="step">
-    	<p><strong>Prepare and Upload Site</strong></p>
-        <p>Make the following changes to the unarchived file:
-        <ol>
-        	<li>Replace <strong>map.json</strong> in the root directory with your own.</li>
-            <li>Place all images you would like processed in the <strong>images/</strong> folder.</li>
-            <li>If any step requires a diagram, name the file <strong>diagram<em>STEPNUMBER</em>.png</strong> and place in the root directory.  If you are unsure of the step number, complete this item later.  This may be done at any point.  Diagrams will populate under the text instructions.</li>
-        </ol>
-        <p>Upload the whole folder to any server that supports PHP and you're good to go.</p>
     </div>
 	</div>
     <p class="small"><a href="https://github.com/dbushell/Nestable" target="_blank">Nestable.js</a> created by <a href="http://dbushell.com/" target="_blank">David Bushell</a> | Heavily modified by Lucy Chang</p>
