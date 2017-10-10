@@ -728,6 +728,7 @@ function startOver(){
 	next.style.fontWeight = 'normal';
 	next.innerHTML = 'next >';
 	$('#buttons > p').css('visibility','visible');
+	$('.count').remove();
 	trigger = 0;
 	isSet = [];
 	document.getElementsByClassName('ss-q-short').value = "";
